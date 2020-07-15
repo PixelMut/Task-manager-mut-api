@@ -147,7 +147,7 @@ app.patch('/lists/:id', authenticate,(req, res)=>{ // to update a specific list
     List.findOneAndUpdate({_id : req.params.id, _userId : req.user_id},{
         $set: req.body
     }).then(()=>{
-        res.sendStatus(200);
+        res.send({'message' : 'updated successfully'});
     });
 });
 
